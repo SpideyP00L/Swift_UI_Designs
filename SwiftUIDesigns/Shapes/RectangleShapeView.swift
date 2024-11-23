@@ -1,24 +1,24 @@
 //
-//  CircleShapeView.swift
+//  RectangleShapeView.swift
 //  SwiftUIDesigns
 //
 //  Created by Jeet Panchal on 2024-11-22.
 //
 
 import SwiftUI
-// MARK: A SwiftUI view that displays an image inside a circular frame with a customizable border and shadow effect.
+// MARK: A SwiftUI view that displays an image inside a Rectangle frame with a customizable border and shadow effect.
 
-struct CircleShapeView: View {
-    // The image to display inside the circle.
+struct RectangleShapeView: View {
+    // The image to display inside the rectangle.
     var image: Image
     
-    // The width of the circular frame.
+    // The width of the rectangular frame.
     var width: CGFloat
     
-    // The height of the circular frame.
+    // The height of the rectangular frame.
     var height: CGFloat
     
-    // The color of the circular border in hexadecimal format.
+    // The color of the rectangular border in hexadecimal format.
     var borderColor: Color
     
     // The width of the border stroke.
@@ -38,21 +38,21 @@ struct CircleShapeView: View {
         // Sets the frame dimensions of the image.
             .frame(width: width, height: height)
         
-        // Clips the image into a circular shape.
-            .clipShape(Circle())
+        // Clips the image into a rectangular shape.
+            .clipShape(Rectangle())
         
             .overlay {
-                // Adds a circular border (stroke) around the clipped image.
-                Circle().stroke(borderColor, lineWidth: borderWidth)
+                // Adds a rectangular border (stroke) around the clipped image.
+                Rectangle().stroke(borderColor, lineWidth: borderWidth)
             }
         // Adds a shadow with the specified radius around the image.
             .shadow(radius: shadowRadius)
     }
 }
 
-// MARK: Example of a CircleShapeView preview.
+// MARK: Example of a RectangleShapeView preview.
 #Preview {
-    CircleShapeView(
+    RectangleShapeView(
         image: Image("Spiderman"),
         width: 300,
         height: 300,
